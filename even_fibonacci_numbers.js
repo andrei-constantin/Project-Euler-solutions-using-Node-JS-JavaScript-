@@ -5,22 +5,29 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 find the sum of the even-valued terms.
 */
 
+var cache = [];
+
 function nthFibonacci(n) {
 
-	if ( n < 1)
-		return 0;
-	if ( n <= 2)
-		return 1;
+    if ( cache[n] )
+        return cache[n];
 
-   return nthFibonacci(n - 1) + nthFibonacci(n - 2);
+    if ( n < 1)
+        return 0;
+    if ( n <= 2)
+        return 1;
+
+    cache[n]= nthFibonacci(n - 1) + nthFibonacci(n - 2);
+
+    return cache[n];
 }
 
 var total = 0;
 var nth = 0;
 for (var i = 0;  nth < 4000000; i++){
-	nth = nthFibonacci(i);
-	if ( nth % 2 ===0 ){
-		total += nth;
-	}	
+    nth = nthFibonacci(i);
+    if ( nth % 2 ===0 ){
+        total += nth;
+    }   
 }
 console.log(total);
