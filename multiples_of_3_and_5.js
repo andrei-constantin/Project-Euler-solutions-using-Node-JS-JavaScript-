@@ -2,11 +2,13 @@
 The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 */
-var sum=0;
-for (var i = 0; i<1000; i++){
- 	if (i%3===0 || i%5===0){ 
- 		sum += i;
- 	}
+function multiples_5_3_sum (n){
+    var sum=0;
+    for (var i = 0; i<n; i++){
+        if (i%3===0 || i%5===0){ 
+            sum += i;
+        }
+    }
+    return sum;
 }
-
-console.log("The sum of all the multiples of 3 and 5 is:" + sum);
+console.log("The sum of all the multiples of 3 and 5 is:" + multiples_5_3_sum(1000));
