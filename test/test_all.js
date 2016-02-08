@@ -1,3 +1,6 @@
+//run with:
+//mocha --ui tdd
+
 var assert = require('assert');
 var multiples_5_3_sum = require('../multiples_of_3_and_5.js').multiples_5_3_sum;
 
