@@ -2,6 +2,9 @@
 The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 */
+
+module.exports.multiples_5_3_sum = multiples_5_3_sum;
+
 function multiples_5_3_sum (n){
     var sum=0;
     for (var i = 0; i<n; i++){
@@ -11,4 +14,5 @@ function multiples_5_3_sum (n){
     }
     return sum;
 }
+
 console.log("The sum of all the multiples of 3 and 5 is:" + multiples_5_3_sum(1000));

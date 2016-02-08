@@ -5,6 +5,9 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 find the sum of the even-valued terms.
 */
 
+module.exports.nthFibonacci = nthFibonacci;
+module.exports.even_fibo_terms_sum = even_fibo_terms_sum;
+
 var cache = [];
 
 function nthFibonacci(n) {
@@ -22,12 +25,18 @@ function nthFibonacci(n) {
     return cache[n];
 }
 
-var total = 0;
-var nth = 0;
-for (var i = 0;  nth < 4000000; i++){
-    nth = nthFibonacci(i);
-    if ( nth % 2 ===0 ){
-        total += nth;
-    }   
+function even_fibo_terms_sum( max ){
+    var total = 0;
+    var nth = 0;
+    for (var i = 0;  nth < max ; i++){
+        nth = nthFibonacci(i);
+        if ( nth % 2 ===0 ){
+            total += nth;
+        }   
+    };
+
+    return total;
 }
+
+var total = even_fibo_terms_sum( 4000000 );
 console.log(total);
