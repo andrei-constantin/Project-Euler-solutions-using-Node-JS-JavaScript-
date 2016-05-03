@@ -18,19 +18,20 @@ function prime_number (n){
 		};
 
 		primes.push( n );
-		console.log('last prime:' + primes[ primes.length - 1 ] + 'total primes so far: ' + primes.length);
 		return true;
 };
 		
 function largest_prime_factor(m){
-	var largest_prime = 2;
-		//for (n=Math.floor(m/2)+1;n>=2;n--){
-		for (n=2;n<=Math.floor(m)/2+1;n++){
-			if (prime_number(n) && m%n === 0){
-				largest_prime = n;
-			};
+	if ( prime_number( m ) ){
+		return m;
+	}
+
+	for (n=2;n<=m;n++){
+		if (prime_number(n) && m%n === 0){
+			return largest_prime_factor( m / n);
 		};
-	return largest_prime;
+	};
+
 };
 
 console.log(largest_prime_factor(600851475143));
