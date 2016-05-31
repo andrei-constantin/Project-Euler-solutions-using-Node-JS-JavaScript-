@@ -3,7 +3,7 @@
 
 How many such routes are there through a 20×20 grid?*/
 
-function lattice_paths(col_nr,line_nr){
+/* function lattice_paths(col_nr,line_nr){
 
 var counter = 1;
 var start = Math.pow ( 2  , col_nr);
@@ -20,5 +20,19 @@ for( i = start ; i <= end ; i++){
 	};
 return (counter);
 	};
+
+console.log(lattice_paths(20,20)); */
+
+function factorial (n){
+	var result = 1;
+	for ( i = 1; i <=n; i++ )
+		result *= i;
+	return (result);
+}
+
+function lattice_paths (col_nr, line_nr){
+	var paths = factorial (col_nr+line_nr) / (factorial(col_nr)*factorial(line_nr));
+	return (paths);
+}
 
 console.log(lattice_paths(20,20));
