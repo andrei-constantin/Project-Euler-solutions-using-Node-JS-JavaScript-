@@ -11,6 +11,8 @@ var nth_prime = require('../10001_st_prime.js').nth_prime;
 
 var divisors = require('../highly_divisible_triangular_number.js').divisors;
 
+var large_sum = require('../large_sum.js').large_sum;
+
 
 suite('Sum of all the multiples of 3 or 5', function() {
     test('multiples of 3 and 5 under 10 is 23', function() {
@@ -49,5 +51,14 @@ suite('THe divisors of a number', function() {
     });
     test('The divisors of 3000 are 2, 3 and 5  with the exponents 3, 1 and 3', function() {
         assert.deepEqual({ base: [ 2, 3, 5 ], exponent: [ 3, 1, 3 ] }, divisors(3000));
+    });
+});
+
+var numbers_string = ["123456789",
+         "987654321"]
+
+suite('Big numbers addition', function() {
+    test('the sum of 123456789 and 987654321 is 1111111110', function() {
+        assert.deepEqual(1111111110, large_sum(numbers_string));
     });
 });
