@@ -13,6 +13,9 @@ var divisors = require('../highly_divisible_triangular_number.js').divisors;
 
 var large_sum = require('../large_sum.js').large_sum;
 
+var largest_palindromic_up_to_n = require('../largest_palindrome_product.js').largest_palindromic_up_to_n;
+var is_palindrome = require('../largest_palindrome_product.js').is_palindrome;
+
 
 suite('Sum of all the multiples of 3 or 5', function() {
     test('multiples of 3 and 5 under 10 is 23', function() {
@@ -45,7 +48,7 @@ suite('Nth prime', function() {
     });
 });
 
-suite('THe divisors of a number', function() {
+suite('The divisors of a number', function() {
     test('The divisors of 24 are 2 and 3 with the exponents 3 and 1', function() {
         assert.deepEqual({ base: [ 2, 3 ], exponent: [ 3, 1 ] }, divisors(24));
     });
@@ -54,11 +57,19 @@ suite('THe divisors of a number', function() {
     });
 });
 
-var numbers_string = ["123456789",
-         "987654321"]
-
 suite('Big numbers addition', function() {
     test('the sum of 123456789 and 987654321 is 1111111110', function() {
-        assert.deepEqual(1111111110, large_sum(numbers_string));
+        assert.deepEqual(1111111110, large_sum(["123456789",
+         "987654321"]));
     });
 });
+
+suite('Is a palindrome', function() {
+    test('15551 is a palindrome', function() {
+        assert.equal(true, is_palindrome(15551));
+    });
+    test('15661 is not a palindrome', function() {
+        assert.equal(false, is_palindrome(15661));
+    });
+});
+
