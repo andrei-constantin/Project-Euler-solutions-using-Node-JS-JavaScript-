@@ -21,6 +21,9 @@ var is_palindrome = require('../largest_palindrome_product.js').is_palindrome;
 
 var largest_product_in_a_series = require('../largest_product_in_a_series.js').largest_product_in_a_series;
 
+var large_prod_grid = require('../largest_product_in_grid.js').large_prod_grid;
+
+
 suite('Sum of all the multiples of 3 or 5', function() {
     test('multiples of 3 and 5 under 10 is 23', function() {
         assert.equal(23, multiples_5_3_sum(10));
@@ -101,3 +104,44 @@ suite('Largest product in a series', function() {
         assert.equal(1512, largest_product_in_a_series('73167176531330624919225119674426574742355349194934',4));
     });
 });
+
+
+suite('Largest product in grid', function() {
+    test("Largest product of 3 adjacent members in 08 02 22 97"  
+         +"\n49 49 99 40"
+         + "\n81 49 31 73"
+         + "\n52 70 95 23"
+         + "\n22 31 16 71"
+         + "\n24 47 32 60"
+         + "\n32 98 81 28"
+         + "\n67 26 20 68 grid is 345800", function() {
+        assert.equal( 345800 , large_prod_grid([[08,02,22,97],
+                                                [49,49,99,40],
+                                                [81,49,31,73],
+                                                [52,70,95,23],
+                                                [22,31,16,71],
+                                                [24,47,32,60],
+                                                [32,98,81,28],
+                                                [67,26,20,68]
+                                                ],3));
+    });
+     test("Largest product of 4 adjacent members in 08 02 22 97"  
+         +"\n49 49 99 40"
+         + "\n81 49 31 73"
+         + "\n52 70 95 23"
+         + "\n22 31 16 71"
+         + "\n24 47 32 60"
+         + "\n32 98 81 28"
+         + "\n67 26 20 68 grid is 9995020", function() {
+        assert.equal( 9995020, large_prod_grid([[08,02,22,97],
+                                                [49,49,99,40],
+                                                [81,49,31,73],
+                                                [52,70,95,23],
+                                                [22,31,16,71],
+                                                [24,47,32,60],
+                                                [32,98,81,28],
+                                                [67,26,20,68]
+                                                ],4));
+    });
+  });
+    
