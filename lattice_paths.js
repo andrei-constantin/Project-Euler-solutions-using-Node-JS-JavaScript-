@@ -22,6 +22,8 @@ return (counter);
 	};
 
 console.log(lattice_paths(20,20)); */
+module.exports.factorial = factorial;
+module.exports.lattice_paths = lattice_paths;
 
 function factorial (n){
 	var result = 1;
