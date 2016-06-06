@@ -23,6 +23,8 @@ var largest_product_in_a_series = require('../largest_product_in_a_series.js').l
 
 var large_prod_grid = require('../largest_product_in_grid.js').large_prod_grid;
 
+var factorial = require('../lattice_paths.js').factorial;
+
 
 suite('Sum of all the multiples of 3 or 5', function() {
     test('multiples of 3 and 5 under 10 is 23', function() {
@@ -145,3 +147,12 @@ suite('Largest product in grid', function() {
     });
   });
     
+suite('Factorial', function() {
+    test('Factorial of 3 is 6', function(){
+        assert.equal(6,factorial(3));
+    });
+    test('Factorial of 5 is 120', function(){
+        assert.equal(120,factorial(5));
+    });
+
+});
