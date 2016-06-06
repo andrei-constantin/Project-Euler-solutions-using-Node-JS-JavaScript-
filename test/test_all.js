@@ -25,6 +25,8 @@ var large_prod_grid = require('../largest_product_in_grid.js').large_prod_grid;
 
 var factorial = require('../lattice_paths.js').factorial;
 
+var lattice_paths = require('../lattice_paths.js').lattice_paths;
+
 
 suite('Sum of all the multiples of 3 or 5', function() {
     test('multiples of 3 and 5 under 10 is 23', function() {
@@ -153,6 +155,16 @@ suite('Factorial', function() {
     });
     test('Factorial of 5 is 120', function(){
         assert.equal(120,factorial(5));
+    });
+
+});
+
+suite('Lattice paths', function() {
+    test('max number of lattice paths for 3 columns and 3 rows is 20', function(){
+        assert.equal(20,lattice_paths(3,3));
+    });
+    test('max number of lattice paths for 2 columns and 2 rows is 6', function(){
+        assert.equal(6,lattice_paths(2,2));
     });
 
 });
