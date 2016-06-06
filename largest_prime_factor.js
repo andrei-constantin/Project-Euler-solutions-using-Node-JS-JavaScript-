@@ -2,10 +2,13 @@
 What is the largest prime factor of the number 600851475143 ?
 */
 module.exports.is_prime = prime_number;
+module.exports.largest_prime_factor = largest_prime_factor;
 
 function prime_number (n, primes){
 		
 		for (var i = 0; i < primes.length; i++){
+			if (n == primes[i]) 
+				return true;
 			if ( n%primes[i] === 0)
 				return false;
 		};
@@ -19,6 +22,8 @@ function prime_number (n, primes){
 		primes.push( n );
 		return true;
 };
+
+
 		
 var primes = [2, 3, 5];
 function largest_prime_factor(m){
@@ -34,5 +39,5 @@ function largest_prime_factor(m){
 
 };
 
-//console.log(largest_prime_factor(600851475143));
+console.log(largest_prime_factor(600851475143));
 
