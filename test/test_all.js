@@ -19,6 +19,7 @@ var large_sum = require('../large_sum.js').large_sum;
 
 var is_palindrome = require('../largest_palindrome_product.js').is_palindrome;
 
+var largest_product_in_a_series = require('../largest_product_in_a_series.js').largest_product_in_a_series;
 
 suite('Sum of all the multiples of 3 or 5', function() {
     test('multiples of 3 and 5 under 10 is 23', function() {
@@ -92,3 +93,11 @@ suite('Is a palindrome', function() {
     });
 });
 
+suite('Largest product in a series', function() {
+    test('Largest product in the series "73167176531330624919225119674426574742355349194934" formed by multiplying 3 adjacent members is 378', function() {
+        assert.equal(378, largest_product_in_a_series('73167176531330624919225119674426574742355349194934',3));
+    });
+    test('Largest product in the series "73167176531330624919225119674426574742355349194934" formed by multiplying 4 adjacent members is 1512', function() {
+        assert.equal(1512, largest_product_in_a_series('73167176531330624919225119674426574742355349194934',4));
+    });
+});
