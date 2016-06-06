@@ -27,6 +27,8 @@ var factorial = require('../lattice_paths.js').factorial;
 
 var lattice_paths = require('../lattice_paths.js').lattice_paths;
 
+var pyth_triplet = require('../special_pythagorean_triplet.js').pyth_triplet;
+
 
 suite('Sum of all the multiples of 3 or 5', function() {
     test('multiples of 3 and 5 under 10 is 23', function() {
@@ -167,4 +169,13 @@ suite('Lattice paths', function() {
         assert.equal(6,lattice_paths(2,2));
     });
 
+});
+
+suite('Pythagorean triplet', function() {
+    test('3,4 and 5 form a pythagorean triplet with members sum of 12', function() {
+        assert.deepEqual([ 3, 4, 5 ], pyth_triplet(12));
+    });
+    test('6,8 and 10 form a pythagorean triplet with members sum of 24', function() {
+        assert.deepEqual([ 6, 8, 10 ], pyth_triplet(24));
+    });
 });
